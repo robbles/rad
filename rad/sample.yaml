@@ -1,0 +1,9 @@
+# Add your regular expressions to match here and color away
+# This file is YAML (http://yaml.org)
+
+# Example: change "regex" to what you want to match
+"regex":
+    fore: green
+    back: black
+    style: normal
+
