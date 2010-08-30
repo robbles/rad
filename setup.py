@@ -38,7 +38,7 @@ setup (
 
     entry_points = {
         'console_scripts': [
-            'rad = rad.cmd:main',
+            'rad = rad.cmdline:main',
         ],
         'gui_scripts': []
     }
