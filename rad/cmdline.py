@@ -11,8 +11,9 @@ from rad.rules import Rule, RuleList
 config=('Location of colorer files', 'option', 'c'),
 verbose=('Show extra info about colorers and rules being applied', 'flag', 'v'),
 new=('Create a new rule', 'flag', 'n'),
+listing=('List all rules, ordered by colorer', 'flag', 'l'),
 colorers=('List of colorers to apply to the input', 'positional'))
-def run(config='~/.rad', verbose=False, new=False, *colorers):
+def run(config='~/.rad', verbose=False, new=False, listing=False, *colorers):
     config = os.path.expanduser(config)
 
     try:
@@ -29,6 +30,10 @@ def run(config='~/.rad', verbose=False, new=False, *colorers):
         rule = rules.create_interactive()
         if verbose:
             print 'created new rule: ' + rule
+        exit(0)
+
+    if listing:
+        rules.print_listing()
         exit(0)
 
     colorama.init()

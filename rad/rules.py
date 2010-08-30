@@ -98,7 +98,7 @@ class RuleList(list):
 
     def path_to_name(self, path):
         filename = os.path.basename(path)
-        name = os.path.splitext(filename)
+        name = os.path.splitext(filename)[0]
         return name
             
     def create_interactive(self):
@@ -121,6 +121,20 @@ class RuleList(list):
         yaml.dump(data, fp)
 
         return rule
+
+    def print_listing(self):
+        """ Print out a list of colorers and rules. """
+        colorers = [(self.path_to_name(config),
+                     self.get_rules(self.path_to_name(config)))
+                    for config in self.configs]
+
+        for colorer, rules in colorers:
+            print colorer
+            print '=' * len(colorer)
+            for rule in rules:
+                print rule
+            print
+
 
 
 
