@@ -7,7 +7,7 @@ PROJECT_DIR = abspath(dirname(__file__))
 
 setup (
     name = 'rad',
-    version = '0.1.0',
+    version = '0.1.1',
     packages = find_packages(),
     zip_safe = True,
 
@@ -19,7 +19,7 @@ setup (
     url = 'http://github.com/robbles/rad',
     license = 'MIT',
     description = 'A super easy console highlighter. Text goes in, color comes out.',
-    long_description = open(join(PROJECT_DIR, 'README')).read(),
+    long_description = open(join(PROJECT_DIR, 'README.rst')).read(),
     classifiers = [
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
