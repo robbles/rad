@@ -26,7 +26,19 @@ of one or more colorers, like so:
 and all rules in the colorers `~/.rad/colorer1.yaml` and `~/.rad/colorer2.yaml`
 will be applied to the input text in order!
 
-rad can also make these files for you interactively, using the `--new/-n` option.
+rad can also make these files for you interactively, using the `--new/-n` option:
+
+    $ rad -n
+    Colorer name for this rule: logs
+    Pattern to match: ERROR
+    Foreground color [white]: red
+    Background color [black]: 
+    Style [bright]: 
+
+    $ tail -f log.txt | rad logs
+
+Colorer files will be appended to, so you can quickly build a colorer with
+a bunch of rules by running this a few times.
 
 Roadmap
 -------
