@@ -7,7 +7,7 @@ PROJECT_DIR = abspath(dirname(__file__))
 
 setup (
     name = 'rad',
-    version = '0.1',
+    version = '0.1.0',
     packages = find_packages(),
     zip_safe = True,
 
