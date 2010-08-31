@@ -7,7 +7,7 @@ How it works
 rad will read the file given with ``--file/-f``, or stdin if omitted.
 
 Highlighting is specified with re-usable colorer files. Colorer files are
-written in [YAML](http://yaml.org/). They contain a collection of rules like
+written in `YAML <http://yaml.org/>`_. They contain a collection of rules like
 this::
 
     "regex":
