@@ -1,32 +1,33 @@
 A super easy console highlighter. Text goes in, color comes out. rad can be
-used to process the output of commands, or to process multiple files.
+used to process the output of commands, or to highlight single files.
 
 How it works
 ------------
-rad will read the file given with `--file/-f`, or stdin if omitted.
+
+rad will read the file given with ``--file/-f``, or stdin if omitted.
 
 Highlighting is specified with re-usable colorer files. Colorer files are
 written in [YAML](http://yaml.org/). They contain a collection of rules like
-this:
+this::
 
     "regex":
         fore: green
         back: black
         style: normal
 
-or this:
+or this::
 
     regex: {fore: red, back: white, style: bright}
 
-and are stored in `~/.rad/`. The simplest way to use rad is to give it the names
-of one or more colorers, like so:
+and are stored in ``~/.rad/`` by default. The simplest way to use rad is to give
+it the names of one or more colorers, like so::
 
     $ echo "this is a test" | rad colorer1 colorer2
 
-and all rules in the colorers `~/.rad/colorer1.yaml` and `~/.rad/colorer2.yaml`
+and all rules in the colorers ``~/.rad/colorer1.yaml`` and ``~/.rad/colorer2.yaml``
 will be applied to the input text in order!
 
-rad can also make these files for you interactively, using the `--new/-n` option:
+rad can also make these files for you interactively, using the ``--new/-n`` option::
 
     $ rad -n
     Colorer name for this rule: logs
