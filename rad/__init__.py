@@ -18,8 +18,7 @@ $ echo "this is a test" | rad colorer1 colorer2
 and all rules in the colorers "~/.rad/colorer1.yaml" and "~/.rad/colorer2.yaml"
 will be applied to the input text in order!
 
-rad can also make these files for you automatically from command-line arguments
-or interactively.
+rad can also make these files for you interactively, using the --new/-n option.
 
 """
 

@@ -8,13 +8,19 @@ from rad import INSTALL, SAMPLE
 from rad.rules import Rule, RuleList
 
 @plac.annotations(
-config=('Location of colorer files', 'option', 'c'),
+config=('Location of colorer files (default ~/.rad)', 'option', 'c', None, None, 'DIR'),
+file=('File to process (default stdin)', 'option', 'f', None, None, 'FILE'),
 verbose=('Show extra info about colorers and rules being applied', 'flag', 'v'),
 new=('Create a new rule', 'flag', 'n'),
 listing=('List all rules, ordered by colorer', 'flag', 'l'),
 colorers=('List of colorers to apply to the input', 'positional'))
-def run(config='~/.rad', verbose=False, new=False, listing=False, *colorers):
+def run(config='~/.rad', file='-', verbose=False, new=False, listing=False, *colorers):
     config = os.path.expanduser(config)
+
+    if file == '-':
+        inputfile = stdin
+    else:
+        inputfile = open(file, 'rU')
 
     try:
         rules = RuleList(colorers, config_dir=config)
@@ -39,7 +45,7 @@ def run(config='~/.rad', verbose=False, new=False, listing=False, *colorers):
     colorama.init()
 
     while 1:
-        line = stdin.readline()
+        line = inputfile.readline()
 
         if not line:
             break
