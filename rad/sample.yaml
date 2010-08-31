@@ -1,0 +1,9 @@
+# Add your regular expressions to match here and highlight away
+# This file is YAML (http://yaml.org)
+
+# Example: change "regex" to what you want to match
+"regex":
+    fore: green # Any terminal color
+    back: black # Any terminal color
+    style: normal # normal, bright, or dim
+
