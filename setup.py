@@ -19,7 +19,7 @@ setup (
     url = 'http://github.com/robbles/rad',
     license = 'MIT',
     description = 'A super easy console highlighter. Text goes in, color comes out.',
-    long_description = open(join(PROJECT_DIR, 'README')).read(),
+    long_description = open(join(PROJECT_DIR, 'README.rst')).read(),
     classifiers = [
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
