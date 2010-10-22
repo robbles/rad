@@ -4,6 +4,10 @@ from setuptools import setup,find_packages
 from os.path import abspath, dirname, join
 
 PROJECT_DIR = abspath(dirname(__file__))
+try:
+    long_description = open(join(PROJECT_DIR, 'README.rst')).read()
+except:
+    long_description = ""
 
 setup (
     name = 'rad',
@@ -19,7 +23,7 @@ setup (
     url = 'http://github.com/robbles/rad',
     license = 'MIT',
     description = 'A super easy console highlighter. Text goes in, color comes out.',
-    long_description = open(join(PROJECT_DIR, 'README.rst')).read(),
+    long_description = long_description,
     classifiers = [
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
